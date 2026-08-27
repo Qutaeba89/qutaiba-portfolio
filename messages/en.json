@@ -128,6 +128,11 @@
     "github": "GitHub",
     "downloadCV": "Download CV"
   },
+  "NotFound": {
+    "heading": "Page not found.",
+    "body": "The page you're looking for doesn't exist, or moved.",
+    "cta": "Back to home"
+  },
   "Footer": {
     "rights": "All rights reserved.",
     "builtWith": "Built with Next.js, deployed on Vercel."

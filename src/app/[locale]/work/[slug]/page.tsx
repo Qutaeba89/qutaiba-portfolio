@@ -32,9 +32,24 @@ export async function generateMetadata({
     namespace: `Projects.items.${slug}`,
   });
 
+  const path = `/${locale}/work/${slug}`;
+
   return {
     title: `${project.name} — Qutaiba Aldandachi`,
     description: t("tagline"),
+    alternates: {
+      canonical: path,
+      languages: {
+        en: `/en/work/${slug}`,
+        sv: `/sv/work/${slug}`,
+        "x-default": `/en/work/${slug}`,
+      },
+    },
+    openGraph: {
+      title: `${project.name} — Qutaiba Aldandachi`,
+      description: t("tagline"),
+      url: path,
+    },
   };
 }
 
