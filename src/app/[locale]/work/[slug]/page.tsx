@@ -49,6 +49,7 @@ export async function generateMetadata({
       title: `${project.name} — Qutaiba Aldandachi`,
       description: t("tagline"),
       url: path,
+      images: [`/${locale}/opengraph-image`],
     },
   };
 }
