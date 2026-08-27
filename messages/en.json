@@ -1,0 +1,135 @@
+{
+  "Meta": {
+    "title": "Qutaiba Aldandachi — Fullstack Developer",
+    "description": "Fullstack developer in Karlskrona, Sweden. Four shipped applications, security-hardened by default, 1,500+ automated tests."
+  },
+  "Nav": {
+    "work": "Work",
+    "about": "About",
+    "experience": "Experience",
+    "contact": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "Hero": {
+    "headline": "Production software, not class projects.",
+    "subtext": "Fullstack developer in Karlskrona, Sweden. Four shipped applications, 1,500+ automated tests, security handled by default, not bolted on after.",
+    "ctaWork": "View the work",
+    "ctaCV": "Download CV"
+  },
+  "TrustStrip": {
+    "label": "Graduated Java & Fullstack Developer (YH), Jönköping University, May 2026"
+  },
+  "About": {
+    "heading": "About",
+    "body": "I'm a fullstack developer based in Karlskrona, working mainly in Next.js, TypeScript, and PostgreSQL. I graduated from Campus Värnamo's Java & Fullstack Developer programme in May 2026, and completed two internships in the Swedish tech industry along the way. I like owning a project end to end, from a blank repository to a live VPS, including CI/CD, containerisation, and the security work most tutorials skip.",
+    "languages": "Swedish and English, professional proficiency. Arabic, native.",
+    "locationLabel": "Based in",
+    "location": "Karlskrona, Sweden"
+  },
+  "Skills": {
+    "heading": "Stack",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "security": "Security",
+      "testing": "Testing",
+      "tools": "Tools"
+    }
+  },
+  "Experience": {
+    "heading": "Experience",
+    "items": [
+      {
+        "role": "Frontend Developer (LIA 2)",
+        "company": "CM Client — AI Condition Monitoring Dashboard",
+        "period": "Feb 2026 – May 2026",
+        "bullets": [
+          "Built a WebSocket-based live feed with three explicit connection states (Live / Reconnecting / Offline), removing the silent failure mode that previously blocked operator response.",
+          "Containerised the application with Docker and deployed to Kubernetes, reaching production-level availability within the four-month placement.",
+          "Shipped bilingual EN/SV support from a single Next.js codebase, ready for two target markets with zero duplicated code."
+        ]
+      },
+      {
+        "role": "Fullstack Developer (LIA 1)",
+        "company": "Mindact Solutions AB — AIBites",
+        "period": "Oct 2025 – Jan 2026",
+        "bullets": [
+          "Designed a layered architecture (repository → service → security) in Next.js 15, keeping business logic independently testable.",
+          "Built role-based access control for three roles with middleware route guards, zero unauthorised access across the test suite.",
+          "Wrote a Vitest suite covering every architectural layer, enabling safe refactoring across the four-month build."
+        ]
+      },
+      {
+        "role": "Java Developer (YH) — Yrkeshögskoleexamen",
+        "company": "Jönköping University, School of Engineering",
+        "period": "Aug 2024 – May 2026",
+        "bullets": [
+          "400 HVE credits, EQF Level 5. Object-Oriented Programming with Java (pass with distinction), advanced Java development, IT security, REST APIs, agile methods, and test-driven development.",
+          "Certified occupations: Application Developer, Java Developer, System Developer, Web Developer."
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "heading": "Selected work",
+    "viewCode": "View code",
+    "liveDemo": "Live demo",
+    "clientProject": "Client project, code under NDA",
+    "backToWork": "Back to work",
+    "stackHeading": "Stack",
+    "sections": {
+      "problem": "The problem",
+      "architecture": "Architecture",
+      "security": "Security",
+      "results": "What shipped"
+    },
+    "items": {
+      "dar-al-alson": {
+        "tagline": "A multi-tenant language institute platform, architected and shipped solo.",
+        "role": "Solo — architecture, backend, frontend, deployment",
+        "problem": "A language institute running enrolment, CEFR-aligned exams, and multi-branch finance by hand needed one system that handles Arabic-first UX and real money without cutting corners.",
+        "architecture": "Next.js 16 App Router, Prisma over PostgreSQL, HTTP-only Iron-Session cookies, Redis. Containerised with Docker and deployed to Kubernetes, running on a VPS behind PM2. Bilingual and RTL-first (Arabic/English) across every screen.",
+        "security": "AES-256-GCM encryption for sensitive fields, CSP nonces, HTTP-only session cookies, and per-endpoint rate limiting. No known security issues in production.",
+        "results": "CEFR-aligned adaptive placement testing, anti-cheat online exams, a multi-currency payment workflow with installment plans and refund cap controls, and a daily financial close with an approval flow across multiple branches. Backed by 1,000+ unit and integration tests in Vitest, plus Playwright end-to-end coverage.",
+        "liveNote": "Live in production for a real institute. Demo access available on request."
+      },
+      "alhambra-beauty": {
+        "tagline": "A dual-currency, dual-script luxury commerce platform, built the way production auth should be.",
+        "role": "Solo — architecture, backend, frontend, deployment",
+        "problem": "An independent luxury cosmetics brand needed a real storefront, not a page builder, serving Arabic (RTL) and English shoppers with local and international pricing side by side.",
+        "architecture": "Next.js 15, Drizzle ORM over Neon Postgres, Tailwind CSS, Framer Motion for the product and interaction layer.",
+        "security": "Custom JWT auth (jose) with 15-minute access tokens and 7-day transparent refresh rotation, opt-in TOTP two-factor authentication, Argon2 password hashing, progressive IP-based rate limiting (15 minutes, then 1 hour, then a permanent block), and a strict-dynamic CSP with nonce scripts.",
+        "results": "Dual-currency pricing (SYP/USD), full RTL bilingual support, an admin console, and a try-it-live product experience."
+      },
+      "tdr-reklam": {
+        "tagline": "A ground-up rebuild for a real print and signage workshop in Karlskrona.",
+        "role": "Solo — architecture, backend, frontend, deployment, CI/CD",
+        "problem": "A physical print shop's old site couldn't take real orders, handle refunds properly, or let customers see how a vehicle decal would actually look before they paid for it.",
+        "architecture": "Next.js 16, TypeScript, Drizzle ORM over Neon Postgres (EU region), bilingual sv/en via next-intl, Stripe Checkout for card and Klarna, Upstash Redis-backed rate limiting, Resend for branded transactional email, and a GitHub Actions pipeline that runs a secret scan, typecheck, lint, test, and build on every push to main.",
+        "security": "Argon2id password hashing with timing-safe handling of unknown emails, progressive account lockout, IDOR-safe queries scoped to the session user everywhere, magic-byte file verification instead of trusting client MIME types, path-traversal-safe file serving, Stripe webhook signature verification, GDPR-compliant erasure that anonymises every table that holds personal data, and an append-only audit log for every admin mutation.",
+        "results": "A canvas-based sticker placement tool for previewing decals on a vehicle silhouette (drag, tap, draw, keyboard-nudge, true-to-scale), guest and member checkout, and an admin back office covering orders, refunds, staff roles, and sales/traffic reports with PDF export. 599 tests passing, with the CI gate enforced on every push."
+      },
+      "cm-client": {
+        "tagline": "Real-time industrial monitoring for AI-powered camera detection on a conveyor belt.",
+        "role": "Frontend developer, second internship placement (team project)",
+        "problem": "Operators had no reliable signal for whether the camera-detection feed was actually live or had silently dropped, which delayed response when something went wrong on the line.",
+        "architecture": "A WebSocket-based live feed with three explicit connection states, containerised with Docker and deployed to Kubernetes, with bilingual EN/SV support built into the same Next.js codebase.",
+        "security": "Deployment hardening and high-availability delivery handled as part of the Kubernetes rollout during the placement.",
+        "results": "Eliminated the silent-failure mode that previously blocked operator response, and delivered production-level high availability within the four-month placement."
+      }
+    }
+  },
+  "Contact": {
+    "heading": "Let's talk",
+    "body": "Open to fullstack developer roles in Sweden or remote. The fastest way to reach me is email.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "downloadCV": "Download CV"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js, deployed on Vercel."
+  }
+}

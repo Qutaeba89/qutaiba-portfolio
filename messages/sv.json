@@ -1,0 +1,135 @@
+{
+  "Meta": {
+    "title": "Qutaiba Aldandachi — Fullstackutvecklare",
+    "description": "Fullstackutvecklare i Karlskrona. Fyra lanserade applikationer, säkerhet inbyggd från start, 1 500+ automatiserade tester."
+  },
+  "Nav": {
+    "work": "Projekt",
+    "about": "Om mig",
+    "experience": "Erfarenhet",
+    "contact": "Kontakt",
+    "downloadCV": "Ladda ner CV"
+  },
+  "Hero": {
+    "headline": "Produktionsklar kod, inte skoluppgifter.",
+    "subtext": "Fullstackutvecklare i Karlskrona. Fyra lanserade applikationer, 1 500+ automatiserade tester, säkerhet inbyggd från start, inte påklistrad efteråt.",
+    "ctaWork": "Se projekten",
+    "ctaCV": "Ladda ner CV"
+  },
+  "TrustStrip": {
+    "label": "Utexaminerad Java- och fullstackutvecklare (YH), Jönköping University, maj 2026"
+  },
+  "About": {
+    "heading": "Om mig",
+    "body": "Jag är fullstackutvecklare baserad i Karlskrona och jobbar främst i Next.js, TypeScript och PostgreSQL. Jag tog examen från Campus Värnamos program Java- och fullstackutvecklare i maj 2026, och gjorde två LIA-praktikperioder i svensk techindustri under utbildningen. Jag gillar att äga ett projekt hela vägen, från tomt repo till en live-server, inklusive CI/CD, containerisering och det säkerhetsarbete de flesta tutorials hoppar över.",
+    "languages": "Svenska och engelska, professionell nivå. Arabiska, modersmål.",
+    "locationLabel": "Baserad i",
+    "location": "Karlskrona, Sverige"
+  },
+  "Skills": {
+    "heading": "Teknikstack",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "security": "Säkerhet",
+      "testing": "Testning",
+      "tools": "Verktyg"
+    }
+  },
+  "Experience": {
+    "heading": "Erfarenhet",
+    "items": [
+      {
+        "role": "Frontendutvecklare (LIA 2)",
+        "company": "CM Client — AI-baserad tillståndsövervakningsdashboard",
+        "period": "Feb 2026 – Maj 2026",
+        "bullets": [
+          "Byggde ett WebSocket-baserat live-flöde med tre tydliga anslutningslägen (Live / Återansluter / Offline), vilket eliminerade det tysta felläge som tidigare försenade operatörens respons.",
+          "Containeriserade applikationen med Docker och driftsatte den på Kubernetes, med produktionsnivå av drifttillgänglighet redan under den fyra månader långa praktiken.",
+          "Levererade tvåspråkigt stöd (EN/SV) från en och samma Next.js-kodbas, redo för två marknader utan duplicerad kod."
+        ]
+      },
+      {
+        "role": "Fullstackutvecklare (LIA 1)",
+        "company": "Mindact Solutions AB — AIBites",
+        "period": "Okt 2025 – Jan 2026",
+        "bullets": [
+          "Designade en lagerbaserad arkitektur (repository → service → säkerhetslager) i Next.js 15, så att affärslogiken kunde testas oberoende.",
+          "Byggde rollbaserad åtkomstkontroll för tre roller med middleware-skydd på ruttnivå, utan obehörig åtkomst i något testfall.",
+          "Skrev en Vitest-testsvit som täckte varje arkitekturlager, vilket gjorde det säkert att refaktorera under hela den fyra månader långa utvecklingen."
+        ]
+      },
+      {
+        "role": "Java-utvecklare (YH) — Yrkeshögskoleexamen",
+        "company": "Jönköping University, School of Engineering",
+        "period": "Aug 2024 – Maj 2026",
+        "bullets": [
+          "400 YH-poäng, EQF-nivå 5. Objektorienterad programmering i Java (godkänt med utmärkt resultat), avancerad Javautveckling, IT-säkerhet, REST-API:er, agila metoder och testdriven utveckling.",
+          "Yrkestitlar: Applikationsutvecklare, Javautvecklare, Systemutvecklare, Webbutvecklare."
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "heading": "Utvalda projekt",
+    "viewCode": "Se koden",
+    "liveDemo": "Live-demo",
+    "clientProject": "Kunduppdrag, koden omfattas av sekretess",
+    "backToWork": "Tillbaka till projekten",
+    "stackHeading": "Teknikstack",
+    "sections": {
+      "problem": "Problemet",
+      "architecture": "Arkitektur",
+      "security": "Säkerhet",
+      "results": "Vad som levererades"
+    },
+    "items": {
+      "dar-al-alson": {
+        "tagline": "En multi-tenant plattform för ett språkinstitut, arkitekterad och levererad helt själv.",
+        "role": "Ensam utvecklare — arkitektur, backend, frontend, driftsättning",
+        "problem": "Ett språkinstitut som skötte antagning, CEFR-anpassade prov och flerfilialsekonomi manuellt behövde ett system som hanterar arabiskt förstaspråk och riktiga pengar utan genvägar.",
+        "architecture": "Next.js 16 App Router, Prisma mot PostgreSQL, HTTP-only Iron-Session-cookies, Redis. Containeriserad med Docker och driftsatt på Kubernetes, körd på en VPS bakom PM2. Tvåspråkig och RTL-först (arabiska/engelska) på varje skärm.",
+        "security": "AES-256-GCM-kryptering för känsliga fält, CSP-nonces, HTTP-only sessionscookies och rate limiting per endpoint. Inga kända säkerhetsincidenter i produktion.",
+        "results": "CEFR-anpassat adaptivt placeringstest, fuskskyddade onlinetentor, ett betalningsflöde med flera valutor, avbetalningsplaner och gränser för återbetalning, samt en daglig ekonomisk avstämning med godkännandeflöde över flera filialer. Backas upp av 1 000+ enhets- och integrationstester i Vitest, plus end-to-end-täckning med Playwright.",
+        "liveNote": "Live i produktion för ett riktigt institut. Demoåtkomst kan ges på begäran."
+      },
+      "alhambra-beauty": {
+        "tagline": "En handelsplattform för lyxvaror med dubbla valutor och dubbla skriftsystem, byggd med produktionsklar autentisering.",
+        "role": "Ensam utvecklare — arkitektur, backend, frontend, driftsättning",
+        "problem": "Ett fristående lyxkosmetikvarumärke behövde en riktig butik, inte en byggd hemsidebyggare, med stöd för både arabiska (RTL) och engelska kunder samt lokala och internationella priser sida vid sida.",
+        "architecture": "Next.js 15, Drizzle ORM mot Neon Postgres, Tailwind CSS, Framer Motion för produkt- och interaktionslagret.",
+        "security": "Egen JWT-autentisering (jose) med 15 minuters access-tokens och transparent 7-dagars refresh-rotation, valfri TOTP-tvåfaktorsautentisering, Argon2-hashning av lösenord, progressiv IP-baserad rate limiting (15 minuter, sedan 1 timme, sedan permanent blockering) och en strict-dynamic CSP med nonce-skript.",
+        "results": "Dubbla valutor (SYP/USD), fullt RTL-stöd på två språk, en adminkonsol och en try-it-live-upplevelse för produkterna."
+      },
+      "tdr-reklam": {
+        "tagline": "En helt ombyggd e-handelsplattform för en riktig skylt- och tryckverkstad i Karlskrona.",
+        "role": "Ensam utvecklare — arkitektur, backend, frontend, driftsättning, CI/CD",
+        "problem": "Tryckverkstadens gamla webbplats kunde varken ta emot riktiga beställningar, hantera återbetalningar korrekt eller låta kunder se hur en bildekal faktiskt skulle se ut innan de betalade.",
+        "architecture": "Next.js 16, TypeScript, Drizzle ORM mot Neon Postgres (EU-region), tvåspråkig sv/en via next-intl, Stripe Checkout för kort och Klarna, rate limiting backad av Upstash Redis, Resend för varumärkesanpassad transaktionsmejl, samt ett GitHub Actions-flöde som kör hemlighetsskanning, typkontroll, lint, tester och bygge vid varje push till main.",
+        "security": "Argon2id-hashning av lösenord med tidssäker hantering av okända e-postadresser, progressiv kontospärrning, IDOR-säkra frågor som alltid begränsas till sessionens användare, verifiering av filer via magiska bytes istället för att lita på klientens MIME-typ, path-traversal-säker filservering, verifiering av Stripes webhook-signatur, GDPR-anpassad radering som anonymiserar personuppgifter i varje tabell, samt en oföränderlig granskningslogg för varje adminåtgärd.",
+        "results": "Ett canvas-baserat verktyg för att placera dekaler på en fordonssiluett (dra, tryck, rita, tangentbordsjustering, skalenligt), utcheckning för både gäster och medlemmar, samt en adminbackend som täcker ordrar, återbetalningar, personalroller och försäljnings-/trafikrapporter med PDF-export. 599 godkända tester, med CI-kontroll vid varje push."
+      },
+      "cm-client": {
+        "tagline": "Realtidsövervakning för AI-baserad kameradetektion på ett transportband.",
+        "role": "Frontendutvecklare, andra LIA-praktiken (teamprojekt)",
+        "problem": "Operatörerna hade ingen pålitlig signal för om kameraflödet faktiskt var live eller tyst hade slutat fungera, vilket försenade responsen när något gick fel på linjen.",
+        "architecture": "Ett WebSocket-baserat live-flöde med tre tydliga anslutningslägen, containeriserat med Docker och driftsatt på Kubernetes, med tvåspråkigt EN/SV-stöd inbyggt i samma Next.js-kodbas.",
+        "security": "Härdning av driftsättningen och leverans av hög tillgänglighet hanterades som en del av Kubernetes-utrullningen under praktiken.",
+        "results": "Eliminerade det tysta felläge som tidigare försenade operatörens respons, och levererade produktionsnivå av drifttillgänglighet redan under den fyra månader långa praktiken."
+      }
+    }
+  },
+  "Contact": {
+    "heading": "Hör av dig",
+    "body": "Öppen för fullstackroller i Sverige eller på distans. Snabbaste vägen att nå mig är e-post.",
+    "email": "E-post",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "downloadCV": "Ladda ner CV"
+  },
+  "Footer": {
+    "rights": "Alla rättigheter förbehållna.",
+    "builtWith": "Byggd med Next.js, driftsatt på Vercel."
+  }
+}

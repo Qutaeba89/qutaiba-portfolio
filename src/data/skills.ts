@@ -1,0 +1,68 @@
+export const skillCategories = [
+  {
+    key: "backend",
+    items: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Java",
+      "Spring Boot",
+      "REST API",
+      "Prisma",
+      "Drizzle",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "Redis",
+    ],
+  },
+  {
+    key: "frontend",
+    items: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Framer Motion",
+      "Chart.js",
+    ],
+  },
+  {
+    key: "devops",
+    items: [
+      "Docker",
+      "Kubernetes",
+      "Docker Compose",
+      "Linux",
+      "Git",
+      "GitHub Actions",
+      "CI/CD",
+      "PM2",
+    ],
+  },
+  {
+    key: "security",
+    items: [
+      "JWT (jose)",
+      "Argon2",
+      "Iron-Session",
+      "RBAC",
+      "Rate Limiting",
+      "CSP Nonces",
+      "Zod",
+      "TOTP 2FA",
+      "AES-256-GCM",
+    ],
+  },
+  {
+    key: "testing",
+    items: ["Vitest", "Playwright", "Integration Testing", "E2E Testing"],
+  },
+  {
+    key: "tools",
+    items: ["Stripe", "Sentry", "WebSocket", "i18n", "Figma", "Agile/Scrum"],
+  },
+] as const;
