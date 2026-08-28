@@ -12,6 +12,7 @@ export default function RootNotFound() {
           justifyContent: "center",
         }}
       >
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/en" style={{ color: "#4d7cfe" }}>
           Back to home
         </a>
