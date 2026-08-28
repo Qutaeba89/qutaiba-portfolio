@@ -31,7 +31,7 @@ export function Contact() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={`mailto:${EMAIL}`}
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent/90 active:translate-y-0 active:scale-[0.98]"
             >
               <EnvelopeSimpleIcon size={16} weight="bold" />
               {t("email")}
@@ -40,7 +40,7 @@ export function Contact() {
               href={GITHUB}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:translate-y-0 active:scale-[0.98]"
             >
               <GithubLogoIcon size={16} weight="bold" />
               {t("github")}
@@ -49,7 +49,7 @@ export function Contact() {
               href={LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:translate-y-0 active:scale-[0.98]"
             >
               <LinkedinLogoIcon size={16} weight="bold" />
               {t("linkedin")}
@@ -57,7 +57,7 @@ export function Contact() {
             <a
               href="/cv/Qutaiba-Aldandachi-CV.pdf"
               download
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:translate-y-0 active:scale-[0.98]"
             >
               <DownloadSimpleIcon size={16} weight="bold" />
               {t("downloadCV")}

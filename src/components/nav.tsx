@@ -22,9 +22,12 @@ export function Nav() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
-          className="font-mono text-sm font-semibold tracking-tight text-foreground"
+          className="group font-mono text-sm font-semibold tracking-tight text-foreground"
         >
-          QA<span className="text-accent">.</span>
+          <span className="transition-opacity group-hover:opacity-70">QA</span>
+          <span className="inline-block text-accent transition-transform duration-200 group-hover:scale-125">
+            .
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
