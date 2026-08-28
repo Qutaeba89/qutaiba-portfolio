@@ -10,6 +10,9 @@ export type Project = {
   status: "solo" | "internship";
   stack: string[];
   links: ProjectLink;
+  /** Set when there's no public repo link: "private" = my own repo, just not
+   * public; "nda" = an employer/client project I can't disclose at all. */
+  codeAccess?: "private" | "nda";
   metric?: string;
   image?: string;
   imageAlt?: string;
@@ -34,9 +37,8 @@ export const projects: Project[] = [
       "Playwright",
       "Sentry",
     ],
-    links: {
-      github: "https://github.com/Qutaeba89/Dar-Al-Alson",
-    },
+    links: {},
+    codeAccess: "private",
     metric: "1,000+ tests",
     image: "/images/projects/dar-al-alson-login.jpg",
     imageAlt: "Dar Al-Alson login screen, Arabic RTL interface",
@@ -62,9 +64,9 @@ export const projects: Project[] = [
       "Framer Motion",
     ],
     links: {
-      github: "https://github.com/Qutaeba89/Alhambra-beauty",
       live: "http://89.46.83.46/",
     },
+    codeAccess: "private",
     metric: "Dual-currency, dual-script",
     image: "/images/projects/alhambra-home.jpg",
     imageAlt: "Alhambra Beauty storefront hero",
@@ -92,9 +94,9 @@ export const projects: Project[] = [
       "Vitest",
     ],
     links: {
-      github: "https://github.com/Qutaeba89/TDR-Reklam",
       live: "https://tdr-reklam.vercel.app/en",
     },
+    codeAccess: "private",
     metric: "599 tests · CI on every push",
     image: "/images/projects/tdr-home.jpg",
     imageAlt: "TDR Reklam storefront hero",
@@ -111,6 +113,7 @@ export const projects: Project[] = [
     status: "internship",
     stack: ["Next.js", "WebSocket", "Docker", "Kubernetes", "i18n (EN/SV)"],
     links: {},
+    codeAccess: "nda",
     metric: "Live / Reconnecting / Offline",
   },
 ];

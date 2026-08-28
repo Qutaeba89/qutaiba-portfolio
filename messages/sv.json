@@ -76,6 +76,7 @@
     "viewCode": "Se koden",
     "liveDemo": "Live-demo",
     "clientProject": "Kunduppdrag, koden omfattas av sekretess",
+    "privateRepo": "Privat repo, tillgängligt på begäran",
     "backToWork": "Tillbaka till projekten",
     "stackHeading": "Teknikstack",
     "sections": {

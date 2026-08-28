@@ -121,10 +121,16 @@ export default async function ProjectPage({
               {t("liveDemo")}
             </a>
           )}
-          {!project.links.github && !project.links.live && (
+          {!project.links.github && project.codeAccess === "nda" && (
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm text-muted">
               <LockKeyIcon size={16} weight="bold" />
               {t("clientProject")}
+            </span>
+          )}
+          {!project.links.github && project.codeAccess === "private" && (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm text-muted">
+              <LockKeyIcon size={16} weight="bold" />
+              {t("privateRepo")}
             </span>
           )}
         </div>
