@@ -126,10 +126,28 @@
   "Contact": {
     "heading": "Hör av dig",
     "body": "Öppen för fullstackroller i Sverige eller på distans. Snabbaste vägen att nå mig är e-post.",
-    "email": "E-post",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "downloadCV": "Ladda ner CV"
+    "downloadCV": "Ladda ner CV",
+    "form": {
+      "nameLabel": "Namn",
+      "namePlaceholder": "Ditt namn",
+      "emailLabel": "E-post",
+      "emailPlaceholder": "du@exempel.com",
+      "messageLabel": "Meddelande",
+      "messagePlaceholder": "Vad vill du prata om?",
+      "submit": "Skicka meddelande",
+      "submitting": "Skickar.",
+      "success": "Ditt e-postprogram ska nu vara öppet med meddelandet klart att skicka.",
+      "errors": {
+        "required": "Det här fältet krävs.",
+        "tooShort": "Det här är lite för kort.",
+        "tooLong": "Det här är för långt.",
+        "invalidEmail": "Ange en giltig e-postadress.",
+        "rateLimited": "För många försök. Försök igen om några minuter.",
+        "unknown": "Något gick fel. Försök igen."
+      }
+    }
   },
   "NotFound": {
     "heading": "Sidan hittades inte.",

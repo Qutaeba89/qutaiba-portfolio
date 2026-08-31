@@ -1,15 +1,14 @@
 import { useTranslations } from "next-intl";
 import {
-  EnvelopeSimpleIcon,
   GithubLogoIcon,
   LinkedinLogoIcon,
   DownloadSimpleIcon,
 } from "@phosphor-icons/react/dist/ssr";
+import { ContactForm } from "./contact-form";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
 import { Button } from "./ui/button";
 
-const EMAIL = "qutaebadandashi@gmail.com";
 const GITHUB = "https://github.com/Qutaeba89";
 const LINKEDIN = "https://linkedin.com/in/qutaiba-al-dandachi";
 
@@ -33,10 +32,6 @@ export function Contact() {
         </Reveal>
         <Reveal delay={0.12}>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={`mailto:${EMAIL}`} variant="primary">
-              <EnvelopeSimpleIcon size={16} weight="bold" />
-              {t("email")}
-            </Button>
             <Button
               href={GITHUB}
               target="_blank"
@@ -64,6 +59,9 @@ export function Contact() {
               {t("downloadCV")}
             </Button>
           </div>
+        </Reveal>
+        <Reveal delay={0.18}>
+          <ContactForm />
         </Reveal>
       </div>
     </section>

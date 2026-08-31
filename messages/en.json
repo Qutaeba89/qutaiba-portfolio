@@ -126,10 +126,28 @@
   "Contact": {
     "heading": "Let's talk",
     "body": "Open to fullstack developer roles in Sweden or remote. The fastest way to reach me is email.",
-    "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "What would you like to talk about?",
+      "submit": "Send message",
+      "submitting": "Sending.",
+      "success": "Your email client should now be open with the message ready to send.",
+      "errors": {
+        "required": "This field is required.",
+        "tooShort": "This is a bit too short.",
+        "tooLong": "This is too long.",
+        "invalidEmail": "Enter a valid email address.",
+        "rateLimited": "Too many attempts. Please try again in a few minutes.",
+        "unknown": "Something went wrong. Please try again."
+      }
+    }
   },
   "NotFound": {
     "heading": "Page not found.",

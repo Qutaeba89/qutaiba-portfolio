@@ -1,10 +1,14 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 type ButtonSize = "md" | "sm";
 
 const base =
-  "inline-flex items-center gap-2 rounded-full font-medium transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]";
+  "inline-flex items-center gap-2 rounded-full font-medium transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 disabled:hover:translate-y-0";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
@@ -19,23 +23,44 @@ const sizes: Record<ButtonSize, string> = {
   sm: "px-3.5 py-1.5 text-sm",
 };
 
+type CommonProps = {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  className?: string;
+  children?: ReactNode;
+};
+
+type ButtonProps =
+  | (CommonProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string })
+  | (CommonProps &
+      ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined });
+
 export function Button({
   variant = "secondary",
   size = "md",
   className = "",
   children,
   ...props
-}: AnchorHTMLAttributes<HTMLAnchorElement> & {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  children?: ReactNode;
-}) {
+}: ButtonProps) {
+  const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
+
+  if (props.href) {
+    return (
+      <a
+        className={classes}
+        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <a
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...props}
+    <button
+      className={classes}
+      {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {children}
-    </a>
+    </button>
   );
 }

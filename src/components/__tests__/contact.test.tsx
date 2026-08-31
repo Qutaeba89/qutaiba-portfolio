@@ -8,12 +8,9 @@ vi.mock("next-intl", () => ({
 import { Contact } from "../contact";
 
 describe("Contact", () => {
-  it("links the email CTA to a mailto address", () => {
+  it("does not render a standalone email CTA (the contact form is the single email path)", () => {
     render(<Contact />);
-    expect(screen.getByText("Contact.email").closest("a")).toHaveAttribute(
-      "href",
-      "mailto:qutaebadandashi@gmail.com",
-    );
+    expect(screen.queryByText("Contact.email")).not.toBeInTheDocument();
   });
 
   it("opens GitHub and LinkedIn in a new tab with safe rel attributes", () => {

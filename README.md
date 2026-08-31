@@ -33,6 +33,9 @@ fully translated into Swedish, not machine-translated after the fact.
   screenshots and an honest code-access note (public repo, private repo, or NDA'd client work)
 - **Generated OG image** — social previews render a real card instead of a blank link
 - **Dark-only, one accent color** — locked theme, no light/dark inconsistency between sections
+- **Contact form as a Server Action** — validates input with Zod, rate-limits submissions
+  per IP (in-memory sliding window), and on success opens the visitor's own email client with
+  the message pre-filled; a hidden honeypot field discourages basic bots
 - **Full test coverage** — every component and route has a Vitest + Testing Library test;
   see [`vitest.config.ts`](./vitest.config.ts)
 - **Static where it can be** — home, all four case studies, and both locales are prerendered at
@@ -45,12 +48,15 @@ src/
 ├── app/[locale]/          # Routes: home, /work/[slug] case studies, layout, metadata
 ├── app/robots.ts          # robots.txt + sitemap.xml (MetadataRoute)
 ├── app/sitemap.ts
+├── app/actions/contact.ts # Contact form Server Action (validation, rate limiting)
 ├── components/            # One component per section, each with a co-located test
 ├── components/ui/         # Shared primitives (Button, Badge) reused across sections
 ├── data/projects.ts       # Project facts (stack, links, images) — language-neutral
 ├── data/skills.ts         # Skill categories shown in the Stack section
 ├── i18n/                  # next-intl routing, request config, typed navigation
 ├── lib/site.ts            # Single source of truth for the canonical site URL
+├── lib/contact-schema.ts  # Contact form Zod schema, field-error mapping, mailto builder
+├── lib/rate-limit.ts      # In-memory sliding-window rate limiter
 └── lib/format-display-name.ts  # Trims/title-cases user-facing display names
 messages/
 ├── en.json                # All English copy, keyed by section/project
