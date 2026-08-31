@@ -11,10 +11,12 @@
     "downloadCV": "Ladda ner CV"
   },
   "Hero": {
+    "greeting": "Hej, jag heter {name}",
     "headline": "Produktionsklar kod, inte skoluppgifter.",
     "subtext": "Fullstackutvecklare i Karlskrona. Fyra lanserade applikationer, 1 500+ automatiserade tester, säkerhet inbyggd från start, inte påklistrad efteråt.",
     "ctaWork": "Se projekten",
-    "ctaCV": "Ladda ner CV"
+    "ctaCV": "Ladda ner CV",
+    "availableBadge": "Tillgänglig för nya uppdrag"
   },
   "TrustStrip": {
     "label": "Utexaminerad Java- och fullstackutvecklare (YH), Jönköping University, maj 2026"

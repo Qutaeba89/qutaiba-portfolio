@@ -6,6 +6,8 @@ import {
   DownloadSimpleIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
+import { SectionHeading } from "./section-heading";
+import { Button } from "./ui/button";
 
 const EMAIL = "qutaebadandashi@gmail.com";
 const GITHUB = "https://github.com/Qutaeba89";
@@ -15,12 +17,14 @@ export function Contact() {
   const t = useTranslations("Contact");
 
   return (
-    <section id="contact">
+    <section id="contact" className="relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-full bg-radial-[at_50%_100%] from-accent/12 via-transparent to-transparent"
+      />
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <Reveal>
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-            {t("heading")}
-          </h2>
+          <SectionHeading>{t("heading")}</SectionHeading>
         </Reveal>
         <Reveal delay={0.06}>
           <p className="mt-4 max-w-[55ch] text-base leading-relaxed text-muted md:text-lg">
@@ -29,39 +33,36 @@ export function Contact() {
         </Reveal>
         <Reveal delay={0.12}>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={`mailto:${EMAIL}`}
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent/90 active:translate-y-0 active:scale-[0.98]"
-            >
+            <Button href={`mailto:${EMAIL}`} variant="primary">
               <EnvelopeSimpleIcon size={16} weight="bold" />
               {t("email")}
-            </a>
-            <a
+            </Button>
+            <Button
               href={GITHUB}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:translate-y-0 active:scale-[0.98]"
+              variant="secondary"
             >
               <GithubLogoIcon size={16} weight="bold" />
               {t("github")}
-            </a>
-            <a
+            </Button>
+            <Button
               href={LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:translate-y-0 active:scale-[0.98]"
+              variant="secondary"
             >
               <LinkedinLogoIcon size={16} weight="bold" />
               {t("linkedin")}
-            </a>
-            <a
+            </Button>
+            <Button
               href="/cv/Qutaiba-Aldandachi-CV.pdf"
               download
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:translate-y-0 active:scale-[0.98]"
+              variant="secondary"
             >
               <DownloadSimpleIcon size={16} weight="bold" />
               {t("downloadCV")}
-            </a>
+            </Button>
           </div>
         </Reveal>
       </div>

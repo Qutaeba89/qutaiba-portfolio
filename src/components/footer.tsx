@@ -15,11 +15,11 @@ export function Footer() {
         <p>
           © {year} Qutaiba Aldandachi. {t("rights")}
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <a
             href={`mailto:${EMAIL}`}
             aria-label="Email"
-            className="transition-colors hover:text-foreground"
+            className="flex size-9 items-center justify-center rounded-full border border-transparent transition-all hover:-translate-y-0.5 hover:border-border hover:text-accent"
           >
             <EnvelopeSimpleIcon size={18} />
           </a>
@@ -28,7 +28,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="transition-colors hover:text-foreground"
+            className="flex size-9 items-center justify-center rounded-full border border-transparent transition-all hover:-translate-y-0.5 hover:border-border hover:text-accent"
           >
             <GithubLogoIcon size={18} />
           </a>
@@ -37,7 +37,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="transition-colors hover:text-foreground"
+            className="flex size-9 items-center justify-center rounded-full border border-transparent transition-all hover:-translate-y-0.5 hover:border-border hover:text-accent"
           >
             <LinkedinLogoIcon size={18} />
           </a>

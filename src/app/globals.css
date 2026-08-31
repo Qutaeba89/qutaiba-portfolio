@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0c;
-  --surface: #131316;
-  --surface-2: #1a1a1f;
-  --border: #27272e;
-  --foreground: #f2f2f4;
-  --muted: #9a9aa4;
-  --accent: #4d7cfe;
-  --accent-foreground: #05070f;
+  --background: #08090b;
+  --surface: #101114;
+  --surface-2: #16171a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --foreground: #f5f5f7;
+  --muted: #96969f;
+  --accent: #d97a3f;
+  --accent-2: #f0b26b;
+  --accent-foreground: #1c0f04;
+  --success: #34d399;
 }
 
 @theme inline {
@@ -16,10 +19,13 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
   --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -30,11 +36,38 @@
 
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
+  position: relative;
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Ambient gradient glow, fixed behind all content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(900px 520px at 12% -8%, rgba(217, 122, 63, 0.14), transparent 60%),
+    radial-gradient(800px 480px at 100% 6%, rgba(240, 178, 107, 0.1), transparent 55%),
+    radial-gradient(700px 420px at 50% 100%, rgba(217, 122, 63, 0.07), transparent 60%);
+  pointer-events: none;
+}
+
+/* Subtle film-grain texture for tactile depth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
@@ -42,11 +75,39 @@ body {
   color: var(--accent-foreground);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
 .prose-body p {
   max-width: 65ch;
 }
 
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {

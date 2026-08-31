@@ -11,10 +11,12 @@
     "downloadCV": "Download CV"
   },
   "Hero": {
+    "greeting": "Hi, I'm {name}",
     "headline": "Production software, not class projects.",
     "subtext": "Fullstack developer in Karlskrona, Sweden. Four shipped applications, 1,500+ automated tests, security handled by default, not bolted on after.",
     "ctaWork": "View the work",
-    "ctaCV": "Download CV"
+    "ctaCV": "Download CV",
+    "availableBadge": "Available for new opportunities"
   },
   "TrustStrip": {
     "label": "Graduated Java & Fullstack Developer (YH), Jönköping University, May 2026"

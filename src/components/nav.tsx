@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ListIcon, XIcon, DownloadSimpleIcon } from "@phosphor-icons/react";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
+import { Button } from "./ui/button";
 
 const sections = [
   { href: "/#work", key: "work" },
@@ -16,16 +17,30 @@ const sections = [
 export function Nav() {
   const t = useTranslations("Nav");
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-40 border-b backdrop-blur-md transition-colors duration-300 ${
+        scrolled
+          ? "border-border bg-background/85 shadow-[0_1px_0_0_var(--border)]"
+          : "border-transparent bg-background/40"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
           className="group font-mono text-sm font-semibold tracking-tight text-foreground"
         >
           <span className="transition-opacity group-hover:opacity-70">QA</span>
-          <span className="inline-block text-accent transition-transform duration-200 group-hover:scale-125">
+          <span className="text-gradient inline-block transition-transform duration-200 group-hover:scale-125">
             .
           </span>
         </Link>
@@ -44,14 +59,15 @@ export function Nav() {
 
         <div className="hidden items-center gap-4 md:flex">
           <LocaleSwitcher />
-          <a
+          <Button
             href="/cv/Qutaiba-Aldandachi-CV.pdf"
             download
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
+            variant="secondary"
+            size="sm"
           >
             <DownloadSimpleIcon size={15} weight="bold" />
             {t("downloadCV")}
-          </a>
+          </Button>
         </div>
 
         <button
@@ -80,14 +96,15 @@ export function Nav() {
           </nav>
           <div className="mt-5 flex items-center justify-between">
             <LocaleSwitcher />
-            <a
+            <Button
               href="/cv/Qutaiba-Aldandachi-CV.pdf"
               download
-              className="inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-1.5 text-sm text-foreground"
+              variant="secondary"
+              size="sm"
             >
               <DownloadSimpleIcon size={15} weight="bold" />
               {t("downloadCV")}
-            </a>
+            </Button>
           </div>
         </div>
       )}

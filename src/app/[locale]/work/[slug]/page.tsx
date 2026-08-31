@@ -11,6 +11,8 @@ import {
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getProject, projects } from "@/data/projects";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -100,26 +102,26 @@ export default async function ProjectPage({
 
         <div className="mt-6 flex flex-wrap gap-3">
           {project.links.github && (
-            <a
+            <Button
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:translate-y-0 active:scale-[0.98]"
+              variant="secondary"
             >
               <GithubLogoIcon size={16} weight="bold" />
               {t("viewCode")}
-            </a>
+            </Button>
           )}
           {project.links.live && (
-            <a
+            <Button
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent/90 active:translate-y-0 active:scale-[0.98]"
+              variant="primary"
             >
               <ArrowSquareOutIcon size={16} weight="bold" />
               {t("liveDemo")}
-            </a>
+            </Button>
           )}
           {!project.links.github && project.codeAccess === "nda" && (
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm text-muted">
@@ -138,7 +140,7 @@ export default async function ProjectPage({
 
       {project.image && (
         <div className="border-y border-border bg-surface">
-          <div className="relative mx-auto aspect-[16/9] max-w-5xl">
+          <div className="relative mx-auto aspect-[16/9] max-w-5xl overflow-hidden shadow-[inset_0_0_0_1px_var(--border)]">
             <Image
               src={project.image}
               alt={project.imageAlt ?? project.name}
@@ -154,7 +156,11 @@ export default async function ProjectPage({
       <div className="mx-auto grid max-w-4xl gap-10 px-6 py-14 md:grid-cols-12 md:py-20">
         <div className="space-y-10 md:col-span-8">
           {sections.map((section) => (
-            <div key={section.key}>
+            <div key={section.key} className="relative pl-5">
+              <span
+                aria-hidden="true"
+                className="absolute top-1 left-0 h-4 w-0.5 rounded-full bg-linear-to-b from-accent to-accent-2"
+              />
               <h2 className="text-lg font-medium text-foreground">
                 {t(`sections.${section.key}`)}
               </h2>
@@ -177,11 +183,10 @@ export default async function ProjectPage({
           </h3>
           <ul className="mt-3 flex flex-wrap gap-2">
             {project.stack.map((tech) => (
-              <li
-                key={tech}
-                className="rounded-full border border-border px-3 py-1 text-xs text-foreground"
-              >
-                {tech}
+              <li key={tech}>
+                <Badge className="px-3 py-1 text-xs text-foreground">
+                  {tech}
+                </Badge>
               </li>
             ))}
           </ul>
@@ -194,14 +199,14 @@ export default async function ProjectPage({
             {project.gallery.map((shot) => (
               <div
                 key={shot.src}
-                className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border"
+                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border transition-colors hover:border-accent/50"
               >
                 <Image
                   src={shot.src}
                   alt={shot.alt}
                   fill
                   sizes="(min-width: 640px) 30vw, 90vw"
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                 />
               </div>
             ))}

@@ -42,14 +42,16 @@ fully translated into Swedish, not machine-translated after the fact.
 
 ```
 src/
-├── app/[locale]/        # Routes: home, /work/[slug] case studies, layout, metadata
-├── app/robots.ts         # robots.txt + sitemap.xml (MetadataRoute)
+├── app/[locale]/          # Routes: home, /work/[slug] case studies, layout, metadata
+├── app/robots.ts          # robots.txt + sitemap.xml (MetadataRoute)
 ├── app/sitemap.ts
-├── components/           # One component per section, each with a co-located test
-├── data/projects.ts      # Project facts (stack, links, images) — language-neutral
-├── data/skills.ts        # Skill categories shown in the Stack section
-├── i18n/                 # next-intl routing, request config, typed navigation
-└── lib/site.ts           # Single source of truth for the canonical site URL
+├── components/            # One component per section, each with a co-located test
+├── components/ui/         # Shared primitives (Button, Badge) reused across sections
+├── data/projects.ts       # Project facts (stack, links, images) — language-neutral
+├── data/skills.ts         # Skill categories shown in the Stack section
+├── i18n/                  # next-intl routing, request config, typed navigation
+├── lib/site.ts            # Single source of truth for the canonical site URL
+└── lib/format-display-name.ts  # Trims/title-cases user-facing display names
 messages/
 ├── en.json                # All English copy, keyed by section/project
 └── sv.json                # All Swedish copy — hand-translated, not auto-generated
