@@ -78,7 +78,7 @@ export const projects: Project[] = [
   },
   {
     slug: "tdr-reklam",
-    name: "TDR Reklam",
+    name: "Test Reklam",
     period: "2026",
     status: "solo",
     stack: [
@@ -99,11 +99,11 @@ export const projects: Project[] = [
     codeAccess: "private",
     metric: "599 tests · CI on every push",
     image: "/images/projects/tdr-home.jpg",
-    imageAlt: "TDR Reklam storefront hero",
+    imageAlt: "Test Reklam storefront hero",
     gallery: [
-      { src: "/images/projects/tdr-catalog.png", alt: "TDR Reklam product catalogue with tier pricing" },
-      { src: "/images/projects/tdr-admin-owner.png", alt: "TDR Reklam owner-level admin dashboard" },
-      { src: "/images/projects/tdr-invoice.png", alt: "TDR Reklam invoice and receipt printing" },
+      { src: "/images/projects/tdr-catalog.png", alt: "Test Reklam product catalogue with tier pricing" },
+      { src: "/images/projects/tdr-admin-owner.png", alt: "Test Reklam owner-level admin dashboard" },
+      { src: "/images/projects/tdr-invoice.png", alt: "Test Reklam invoice and receipt printing" },
     ],
   },
   {

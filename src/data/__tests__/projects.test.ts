@@ -4,7 +4,7 @@ import { getProject, projects } from "../projects";
 describe("getProject", () => {
   it("returns the matching project for a known slug", () => {
     const project = getProject("tdr-reklam");
-    expect(project?.name).toBe("TDR Reklam");
+    expect(project?.name).toBe("Test Reklam");
   });
 
   it("returns undefined for an unknown slug", () => {

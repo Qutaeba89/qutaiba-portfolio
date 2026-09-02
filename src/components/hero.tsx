@@ -10,7 +10,7 @@ const OWNER_NAME = "qutaiba aldandachi";
 const STACK_IMAGES = [
   {
     src: "/images/projects/tdr-home.jpg",
-    alt: "TDR Reklam storefront",
+    alt: "Test Reklam storefront",
     className: "top-0 left-0 w-[64%] rotate-[-4deg]",
   },
   {
