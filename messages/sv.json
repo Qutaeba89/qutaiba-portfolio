@@ -101,7 +101,7 @@
         "tagline": "En handelsplattform för lyxvaror med dubbla valutor och dubbla skriftsystem, byggd med produktionsklar autentisering.",
         "role": "Ensam utvecklare — arkitektur, backend, frontend, driftsättning",
         "problem": "Ett fristående lyxkosmetikvarumärke behövde en riktig butik, inte en byggd hemsidebyggare, med stöd för både arabiska (RTL) och engelska kunder samt lokala och internationella priser sida vid sida.",
-        "architecture": "Next.js 15, Drizzle ORM mot Neon Postgres, Tailwind CSS, Framer Motion för produkt- och interaktionslagret.",
+        "architecture": "Next.js 16, Drizzle ORM mot Neon Postgres, Tailwind CSS, Framer Motion för produkt- och interaktionslagret.",
         "security": "Egen JWT-autentisering (jose) med 15 minuters access-tokens och transparent 7-dagars refresh-rotation, valfri TOTP-tvåfaktorsautentisering, Argon2-hashning av lösenord, progressiv IP-baserad rate limiting (15 minuter, sedan 1 timme, sedan permanent blockering) och en strict-dynamic CSP med nonce-skript.",
         "results": "Dubbla valutor (SYP/USD), fullt RTL-stöd på två språk, en adminkonsol och en try-it-live-upplevelse för produkterna."
       },

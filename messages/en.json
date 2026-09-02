@@ -101,7 +101,7 @@
         "tagline": "A dual-currency, dual-script luxury commerce platform, built the way production auth should be.",
         "role": "Solo — architecture, backend, frontend, deployment",
         "problem": "An independent luxury cosmetics brand needed a real storefront, not a page builder, serving Arabic (RTL) and English shoppers with local and international pricing side by side.",
-        "architecture": "Next.js 15, Drizzle ORM over Neon Postgres, Tailwind CSS, Framer Motion for the product and interaction layer.",
+        "architecture": "Next.js 16, Drizzle ORM over Neon Postgres, Tailwind CSS, Framer Motion for the product and interaction layer.",
         "security": "Custom JWT auth (jose) with 15-minute access tokens and 7-day transparent refresh rotation, opt-in TOTP two-factor authentication, Argon2 password hashing, progressive IP-based rate limiting (15 minutes, then 1 hour, then a permanent block), and a strict-dynamic CSP with nonce scripts.",
         "results": "Dual-currency pricing (SYP/USD), full RTL bilingual support, an admin console, and a try-it-live product experience."
       },
