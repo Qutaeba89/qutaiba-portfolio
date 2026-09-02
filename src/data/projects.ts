@@ -54,7 +54,7 @@ export const projects: Project[] = [
     period: "2025",
     status: "solo",
     stack: [
-      "Next.js 15",
+      "Next.js 16",
       "Drizzle ORM",
       "Neon Postgres",
       "JWT (jose)",
